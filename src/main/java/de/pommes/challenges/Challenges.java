@@ -1,10 +1,14 @@
 package de.pommes.challenges;
 
 import de.pommes.challenges.Timer.Timer;
+import de.pommes.challenges.challenge.ChallengeType;
+import de.pommes.challenges.challenge.ListenerType;
+import de.pommes.challenges.challenge.ccs.RandomBlockDrops;
 import de.pommes.challenges.commands.Test;
 import de.pommes.challenges.commands.timercommands;
 import de.pommes.challenges.events.Events;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -17,9 +21,14 @@ public final class Challenges extends JavaPlugin {
 
     public Timer ChallengeTimer;
 
+    public RandomBlockDrops blockDrops;
+
+    public Events events;
+
     @Override
     public void onEnable() {
-        getServer().getPluginManager().registerEvents(new Events(), this);
+        events = new Events();
+        getServer().getPluginManager().registerEvents(events, this);
         instance = this;
         ChallengeTimer = new Timer();
         saveConfig();
@@ -35,6 +44,9 @@ public final class Challenges extends JavaPlugin {
         getCommand("timer").setExecutor(new timercommands());
         getCommand("timer").setTabCompleter(new timercommands());
         getCommand("test").setExecutor(new Test());
+
+        blockDrops = new RandomBlockDrops(ChallengeType.world);
+        blockDrops.enableBehavior(ListenerType.randomDrops);
     }
 
     @Override

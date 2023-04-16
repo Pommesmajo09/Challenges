@@ -29,6 +29,14 @@ public class Events implements Listener {
             }
             e.setCancelled(true);
         }
+        if(e.getView().getTitle().equals("§cWorld Challenges")){
+            if(Objects.requireNonNull(e.getCurrentItem()).getItemMeta().getDisplayName().equals("§2Item Drop Randomizer")){
+                Challenges.getInstance().blockDrops.toggleBehavior();
+                WorldChallenges.create();
+                e.getWhoClicked().openInventory(WorldChallenges.get());
+            }
+            e.setCancelled(true);
+        }
     }
 
     @EventHandler
@@ -48,4 +56,5 @@ public class Events implements Listener {
     public void addChallengeType(ListenerType type){
         activeChallenges.add(type);
     }
+    public void deleteChallengeType(ListenerType type){activeChallenges.remove(type);}
 }

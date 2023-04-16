@@ -45,8 +45,7 @@ public final class Challenges extends JavaPlugin {
         getCommand("timer").setTabCompleter(new timercommands());
         getCommand("test").setExecutor(new Test());
 
-        blockDrops = new RandomBlockDrops(ChallengeType.world);
-        blockDrops.enableBehavior(ListenerType.randomDrops);
+        blockDrops = new RandomBlockDrops();
     }
 
     @Override

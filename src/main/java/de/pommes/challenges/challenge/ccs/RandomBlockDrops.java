@@ -4,6 +4,7 @@ import de.pommes.challenges.Challenges;
 import de.pommes.challenges.challenge.Challenge;
 import de.pommes.challenges.challenge.ListenerType;
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.*;
 
@@ -14,13 +15,19 @@ public class RandomBlockDrops implements Challenge {
     private Boolean activated;
 
     public RandomBlockDrops() {
-        List<Material> randomItems = new ArrayList<>(Arrays.asList(Material.values()));
+        List<Material> randomItems = new ArrayList<>();
+        for (Material m:Material.values()) {
+            if(!(m == Material.AIR)){
+                randomItems.add(m);
+            }
+        }
         activated = false;
         for(Material mat : randomItems){
             if(mat.isBlock()) {
                 Random random = new Random();
                 int rnd = random.nextInt(randomItems.size());
-                map.put(mat, randomItems.get(rnd));
+                Material rndItem = randomItems.get(rnd);
+                map.put(mat, rndItem);
             }
         }
     }

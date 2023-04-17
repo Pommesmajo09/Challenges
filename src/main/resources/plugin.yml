@@ -4,4 +4,4 @@ main: de.pommes.challenges.Challenges
 api-version: 1.19
 commands:
   timer:
-  test:
+  challenges:

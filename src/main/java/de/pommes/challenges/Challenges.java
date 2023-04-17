@@ -1,14 +1,12 @@
 package de.pommes.challenges;
 
 import de.pommes.challenges.Timer.Timer;
-import de.pommes.challenges.challenge.ChallengeType;
-import de.pommes.challenges.challenge.ListenerType;
 import de.pommes.challenges.challenge.ccs.RandomBlockDrops;
+import de.pommes.challenges.challenge.ccs.limitedHearths;
 import de.pommes.challenges.commands.Test;
 import de.pommes.challenges.commands.timercommands;
 import de.pommes.challenges.events.Events;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -22,6 +20,8 @@ public final class Challenges extends JavaPlugin {
     public Timer ChallengeTimer;
 
     public RandomBlockDrops blockDrops;
+
+    public limitedHearths hearths;
 
     public Events events;
 
@@ -43,9 +43,10 @@ public final class Challenges extends JavaPlugin {
         ChallengeTimer.startTimerExecutable();
         getCommand("timer").setExecutor(new timercommands());
         getCommand("timer").setTabCompleter(new timercommands());
-        getCommand("test").setExecutor(new Test());
+        getCommand("challenges").setExecutor(new Test());
 
         blockDrops = new RandomBlockDrops();
+        hearths = new limitedHearths();
     }
 
     @Override

@@ -85,4 +85,12 @@ public class Timer {
     public void setPaused(boolean paused) {
         this.paused = paused;
     }
+
+    public void toggle(){
+        if(paused){
+            paused = false;
+        } else {
+            paused = true;
+        }
+    }
 }

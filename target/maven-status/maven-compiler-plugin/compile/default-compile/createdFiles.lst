@@ -5,6 +5,7 @@ de\pommes\challenges\challenge\ccs\RandomBlockDrops.class
 de\pommes\challenges\challenge\ListenerType.class
 de\pommes\challenges\GuIInventories\ChallengeMenu.class
 de\pommes\challenges\challenge\Challenge.class
+de\pommes\challenges\GuIInventories\TimerMenu.class
 de\pommes\challenges\challenge\ccs\limitedHearths.class
 de\pommes\challenges\Timer\Timer.class
 de\pommes\challenges\util\InventoryBuilder.class

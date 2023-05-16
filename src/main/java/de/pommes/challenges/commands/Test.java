@@ -2,6 +2,7 @@ package de.pommes.challenges.commands;
 
 import de.pommes.challenges.GuIInventories.ChallengeMenu;
 import de.pommes.challenges.GuIInventories.PlayerChallenges;
+import de.pommes.challenges.GuIInventories.TimerMenu;
 import de.pommes.challenges.GuIInventories.WorldChallenges;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -16,6 +17,7 @@ public class Test implements CommandExecutor {
 
         WorldChallenges.create();
         PlayerChallenges.create();
+        TimerMenu.create();
 
         p.openInventory(ChallengeMenu.get());
 

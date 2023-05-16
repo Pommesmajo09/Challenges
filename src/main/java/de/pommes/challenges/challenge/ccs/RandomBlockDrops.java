@@ -14,10 +14,25 @@ public class RandomBlockDrops implements Challenge {
 
     private Boolean activated;
 
+    public ArrayList<Material> exclude = new ArrayList<>();
+
     public RandomBlockDrops() {
+        //exclude.add(Material.POTTED_MANGROVE_PROPAGULE);
+        //exclude.add(Material.POTTED_WITHER_ROSE);
+        //exclude.add(Material.WALL_TORCH);
+        //exclude.add(Material.POTTED_ALLIUM);
+        //exclude.add(Material.POTTED_BAMBOO);
+        //exclude.add(Material.POTTE);
+
+        for (Material m : Material.values()) {
+            if(m.name().startsWith("POTTED_") | m.name().startsWith("TUBE_")){
+                exclude.add(m);
+            }
+        }
+
         List<Material> randomItems = new ArrayList<>();
         for (Material m:Material.values()) {
-            if(!(m == Material.AIR)){
+            if(m.isBlock() & !m.isAir() & !exclude.contains(m)){
                 randomItems.add(m);
             }
         }

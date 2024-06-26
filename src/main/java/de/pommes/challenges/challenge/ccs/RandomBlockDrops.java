@@ -3,7 +3,10 @@ package de.pommes.challenges.challenge.ccs;
 import de.pommes.challenges.Challenges;
 import de.pommes.challenges.challenge.Challenge;
 import de.pommes.challenges.challenge.ListenerType;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.*;
@@ -23,6 +26,7 @@ public class RandomBlockDrops implements Challenge {
         //exclude.add(Material.POTTED_ALLIUM);
         //exclude.add(Material.POTTED_BAMBOO);
         //exclude.add(Material.POTTE);
+        exclude.add(Material.LAVA_CAULDRON);
 
         for (Material m : Material.values()) {
             if(m.name().startsWith("POTTED_") | m.name().startsWith("TUBE_")){
@@ -32,7 +36,7 @@ public class RandomBlockDrops implements Challenge {
 
         List<Material> randomItems = new ArrayList<>();
         for (Material m:Material.values()) {
-            if(m.isBlock() & !m.isAir() & !exclude.contains(m)){
+            if(!m.isAir() & !exclude.contains(m) & m.isItem()){
                 randomItems.add(m);
             }
         }

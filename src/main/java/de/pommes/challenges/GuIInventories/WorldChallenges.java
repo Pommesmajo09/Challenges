@@ -14,9 +14,9 @@ public class WorldChallenges {
         InventoryBuilder builder = new InventoryBuilder("§cWorld Challenges", 9);
 
         if(Challenges.getInstance().blockDrops.isActivated()){
-            builder.addItem(new ItemBuilder("§2Item Drop Randomizer", Material.GRASS_BLOCK, 1).addLore("Every Block drops a Random Item!", "§2Enabled").build(), 1);
+            builder.addItem(new ItemBuilder("§2Block Drop Randomizer", Material.GRASS_BLOCK, 1).addLore("Every Block drops a Random Item!", "§2Enabled").build(), 1);
         }else {
-            builder.addItem(new ItemBuilder("§2Item Drop Randomizer", Material.GRASS_BLOCK, 1).addLore("Every Block drops a Random Item!", "§cDisabled").build(), 1);
+            builder.addItem(new ItemBuilder("§2Block Drop Randomizer", Material.GRASS_BLOCK, 1).addLore("Every Block drops a Random Item!", "§cDisabled").build(), 1);
         }
         builder.addItem(new ItemBuilder("§cBack", Material.DARK_OAK_DOOR, 1).build(), 8);
 

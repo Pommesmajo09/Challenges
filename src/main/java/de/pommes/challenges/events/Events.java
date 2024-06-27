@@ -1,10 +1,7 @@
 package de.pommes.challenges.events;
 
 import de.pommes.challenges.Challenges;
-import de.pommes.challenges.GuIInventories.ChallengeMenu;
-import de.pommes.challenges.GuIInventories.PlayerChallenges;
-import de.pommes.challenges.GuIInventories.TimerMenu;
-import de.pommes.challenges.GuIInventories.WorldChallenges;
+import de.pommes.challenges.GuIInventories.*;
 import de.pommes.challenges.Timer.Timer;
 import de.pommes.challenges.challenge.ListenerType;
 import org.bukkit.Bukkit;
@@ -40,10 +37,13 @@ public class Events implements Listener {
                 if (Objects.requireNonNull(e.getCurrentItem()).getItemMeta().getDisplayName().equals("§2Timer Settings")) {
                     e.getWhoClicked().openInventory(TimerMenu.get());
                 }
+                /*if(e.getCurrentItem().getItemMeta().getDisplayName().equals("§2Goals")){
+                    e.getWhoClicked().openInventory(GoalsMenu.get());
+                }*/
                 e.setCancelled(true);
             }
             if (e.getView().getTitle().equals("§cWorld Challenges")) {
-                if (Objects.requireNonNull(e.getCurrentItem()).getItemMeta().getDisplayName().equals("§2Item Drop Randomizer")) {
+                if (Objects.requireNonNull(e.getCurrentItem()).getItemMeta().getDisplayName().equals("§2Block Drop Randomizer")) {
                     Challenges.getInstance().blockDrops.toggleBehavior();
                     WorldChallenges.create();
                     e.getWhoClicked().openInventory(WorldChallenges.get());
@@ -75,6 +75,17 @@ public class Events implements Listener {
                 }
                 e.setCancelled(true);
             }
+            if (e.getView().getTitle().equals("§cGoals")) {
+                /*if (Objects.requireNonNull(e.getCurrentItem()).getItemMeta().getDisplayName().equals("§2Start/Stop Timer")) {
+                    Challenges.getInstance().ChallengeTimer.toggle();
+                    TimerMenu.create();
+                    e.getWhoClicked().openInventory(TimerMenu.get());
+                }
+                if (Objects.requireNonNull(e.getCurrentItem()).getItemMeta().getDisplayName().equals("§cBack")) {
+                    e.getWhoClicked().openInventory(ChallengeMenu.get());
+                }*/
+                e.setCancelled(true);
+            }
         }
         catch (Exception ignored){
 
@@ -91,8 +102,6 @@ public class Events implements Listener {
         if(activeChallenges.contains(ListenerType.randomDrops)) {
             Location loc = e.getBlock().getLocation();
             e.getBlock().getDrops().clear();
-            ItemStack item = new ItemStack(Challenges.getInstance().blockDrops.getMap().get(e.getBlock().getType()));
-            Bukkit.broadcastMessage(item.getType().name());
             loc.getWorld().dropItemNaturally(loc, new ItemStack(Challenges.getInstance().blockDrops.getMap().get(e.getBlock().getType())));
         }
     }

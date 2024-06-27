@@ -3,7 +3,7 @@ package de.pommes.challenges;
 import de.pommes.challenges.Timer.Timer;
 import de.pommes.challenges.challenge.ccs.RandomBlockDrops;
 import de.pommes.challenges.challenge.ccs.limitedHearths;
-import de.pommes.challenges.commands.Test;
+import de.pommes.challenges.commands.ChallengesCommand;
 import de.pommes.challenges.commands.timercommands;
 import de.pommes.challenges.events.Events;
 import org.bukkit.entity.Player;
@@ -43,7 +43,7 @@ public final class Challenges extends JavaPlugin {
         ChallengeTimer.startTimerExecutable();
         getCommand("timer").setExecutor(new timercommands());
         getCommand("timer").setTabCompleter(new timercommands());
-        getCommand("challenges").setExecutor(new Test());
+        getCommand("challenges").setExecutor(new ChallengesCommand());
 
         blockDrops = new RandomBlockDrops();
         hearths = new limitedHearths();

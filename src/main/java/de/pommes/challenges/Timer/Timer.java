@@ -20,7 +20,7 @@ public class Timer {
     private boolean paused = true;
     public Timer(){
         config = Challenges.getInstance().getConfig();
-        if(Objects.equals(config.get(".Timer" + ".settings" + ".reset_on_reload"), true)){
+        if(Objects.equals(config.get(".timer" + ".settings" + ".reset_on_reload"), true)){
             sec = 0;
             min = 0;
             h = 0;
@@ -46,7 +46,13 @@ public class Timer {
                     }
                 }
                 for (Player p : Challenges.players) {
-                    p.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(h + ":" + min + ":" + sec));
+                    if(min == 0) {
+                        p.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy(sec + ""));
+                    } else if (h > 0){
+                        p.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy(h + ":" + min + ":" +sec));
+                    }else {
+                        p.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy(min + ":" + sec));
+                    }
                 }
             }
         }.runTaskTimer(Challenges.getInstance(), 5, 20);

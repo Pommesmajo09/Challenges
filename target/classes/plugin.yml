@@ -1,5 +1,5 @@
 name: Challenges
-version: '0.1'
+version: '0.1-1.21'
 main: de.pommes.challenges.Challenges
 api-version: 1.21
 commands:

@@ -4,13 +4,15 @@ de\pommes\challenges\Challenges.class
 de\pommes\challenges\challenge\ccs\RandomBlockDrops.class
 de\pommes\challenges\challenge\ListenerType.class
 de\pommes\challenges\GuIInventories\ChallengeMenu.class
+de\pommes\challenges\commands\ChallengesCommand.class
 de\pommes\challenges\challenge\Challenge.class
+de\pommes\challenges\GuIInventories\GoalsMenu.class
+de\pommes\challenges\GuIInventories\GUIInv.class
 de\pommes\challenges\GuIInventories\TimerMenu.class
 de\pommes\challenges\challenge\ccs\limitedHearths.class
 de\pommes\challenges\Timer\Timer.class
 de\pommes\challenges\util\InventoryBuilder.class
 de\pommes\challenges\util\ItemBuilder.class
-de\pommes\challenges\commands\Test.class
 de\pommes\challenges\GuIInventories\PlayerChallenges.class
 de\pommes\challenges\events\Events.class
 de\pommes\challenges\Timer\Timer$1.class

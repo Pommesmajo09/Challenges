@@ -20,12 +20,8 @@ Add a competitive edge to your challenges with the Integrated Timer. Whether you
 
 -   **Customizable Settings**: Tailor each challenge to your preferences with a variety of configurable options.
 -   **User-Friendly Interface**: Easily switch between modes and set up challenges with our intuitive interface.
+- ![Menu Example Image](https://github.com/Pommesmajo08/Challenges/blob/1.21/img/menu.png)
 -   **Multiplayer Compatible**: Enjoy these thrilling challenges solo or compete with friends for the ultimate bragging rights.
 -   **Regular Updates**: Stay tuned for new modes and features as we continuously enhance your gameplay experience.
 
 Get ready to elevate your Minecraft adventures and put your skills to the ultimate test. Download the Ultimate Minecraft Challenge Plugin today and discover a whole new way to play!
-
-
-
-
-
